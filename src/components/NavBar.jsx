@@ -1,60 +1,62 @@
-import React from "react";
-import { MdOutlineShoppingCart } from "react-icons/md";
-import { IoPersonCircleOutline } from "react-icons/io5";
-
+import React, { useState } from "react";
+import { FiUser, FiShoppingCart, FiMenu, FiX } from "react-icons/fi";
 const NavBar = () => {
+  const [menuOpen, setMenuOpen] = useState(false);
   return (
-    <header className="bg-white w-full shadow-md">
-      <div className="max-w-7x1 mx-auto px-4 py-4 flex items-center justify-between">
-        {/* Logo */}
-        <div className="flex items-center gap-2 text-xl font-bold text-black">
-          <span className="text-2xl">🌿</span>Liyanage Enginering
-        </div>
+    <header className="bg-[#3e5c4a] text-white px-6 lg:px-20 py-4 shadow flex items-center justify-between">
+      {/* Logo */}
+      <div className="text-2xl font-bold">Liyange Enginering</div>
+      {/* Desktop Menu */}
+      <nav className="hidden md:flex gap-8 text-sm font-medium">
+        <a href="#" className="hover:text-yellow-400">
+          Home
+        </a>
+        <a href="#" className="hover:text-yellow-400">
+          Shop
+        </a>
+        <a href="#" className="hover:text-yellow-400">
+          About Us
+        </a>
+        <a href="#" className="hover:text-yellow-400">
+          Service
+        </a>
+        <a href="#" className="hover:text-yellow-400">
+          Contact Us
+        </a>
+      </nav>
 
-        {/* Main Nav */}
-        <div className="hidden md:flex items-center gap-6">
-          {/* Search */}
-          <div className="flex items-center border rounded-md overflow-hidden">
-            <select className="px-2 py-1 border-r text-sm bg-white">
-              <option>Machine</option>
-              <option>Wheel</option>
-            </select>
-            <input
-              type="text"
-              placeholder="Search..."
-              className="px-2 py-1 w-64 outline-none"
-            />
-            <button className="bg-gray-100 px-3">🔍</button>
-          </div>
-          {/* Icons + Menu */}
-          <nav className="flex items-center gap-6 text-gray-600">
-            <a href="#">HOME</a>
-            <a href="#">SHOP</a>
-            <a href="#">PAGES</a>
-            <a href="#">CONTACT</a>
-            <MdOutlineShoppingCart />
-            <IoPersonCircleOutline />
-          </nav>
-        </div>
+      {/* Icon & Mobile Menu Toggle */}
+      <div className="flex items-center gap-4 text-xl md:hidden">
+        <button onClick={() => setMenuOpen(!menuOpen)}>
+          {menuOpen ? <FiX /> : <FiMenu />}
+        </button>
       </div>
 
-      {/* Mobile nav */}
+      <div className="hidden md:flex items-center gap-10 text-xl">
+        <FiUser className="cursor-pointer hover:text-yellow-400" />
+        <FiShoppingCart className="cursor-pointer hover:text-yellow-400" />
+      </div>
 
-      {open && (
-        <div className="md:hidden px-4 pb-4 space-y-4">
-          <input
-            type="text"
-            placeholder="Search..."
-            className="w-full px-3 py-2 border rounded-md"
-          />
-          <div className="flex gap-4">
-            <a href="#">HOME</a>
-            <a href="#">SHOP</a>
-            <a href="#">PAGES</a>
-            <a href="#">CONTACT</a>
-            <MdOutlineShoppingCart />
-            <IoPersonCircleOutline />
-          </div>
+      {/* Mobile Menu */}
+      {menuOpen && (
+        <div className="absolute top-[72px] left-0 w-full bg-[#3e5c4a] text-center py-4 md:hidden z-50">
+          <nav className="flex flex-col gap-4 text-base font-medium">
+            <a href="#" className="hover:text-yellow-400">
+              Home
+            </a>
+            <a href="#" className="hover:text-yellow-400">
+              Shop
+            </a>
+            <a href="#" className="hover:text-yellow-400">
+              About Us
+            </a>
+            <a href="#" className="hover:text-yellow-400">
+              Service
+            </a>
+            <a href="#" className="hover:text-yellow-400">
+              Contact Us
+            </a>
+          </nav>
         </div>
       )}
     </header>
