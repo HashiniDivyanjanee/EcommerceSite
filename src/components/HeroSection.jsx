@@ -1,5 +1,5 @@
 import React from "react";
-import image from "../assets/Category/image2.png";
+import image from "../assets/image4.png";
 const HeroSection = () => {
   return (
     <div className="bg-[#3e5c4a] min-h-screen flex items-center px-10 lg:px-20">

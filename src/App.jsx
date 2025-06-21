@@ -5,6 +5,7 @@ import "./App.css";
 import NavBar from "./components/NavBar.jsx";
 import HeroSection from "./components/HeroSection.jsx";
 import Category from "./components/Category.jsx";
+import Product from "./components/Products.jsx";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <NavBar />
         <HeroSection/>
         <Category/>
+        <Product/>
       </div>
     </>
   );
