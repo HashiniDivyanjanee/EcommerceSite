@@ -6,6 +6,7 @@ import NavBar from "./components/NavBar.jsx";
 import HeroSection from "./components/HeroSection.jsx";
 import Category from "./components/Category.jsx";
 import Product from "./components/Products.jsx";
+import Offer from "./components/Offers.jsx";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <HeroSection/>
         <Category/>
         <Product/>
+        <Offer/>
       </div>
     </>
   );
