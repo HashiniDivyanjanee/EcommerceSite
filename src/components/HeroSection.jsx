@@ -2,7 +2,7 @@ import React from "react";
 import image from "../assets/image4.png";
 const HeroSection = () => {
   return (
-    <div className="bg-[#3e5c4a] min-h-screen flex items-center px-10 lg:px-20">
+    <div className="bg-[#3e5c4a] min-h-45 flex items-center px-10 lg:px-20">
       <div className="grid grid-cols-1 lg:grid-cols-2 items-center w-full max-w-7xl mx-auto">
         {/* Left Content */}
         <div className="text-white space-y-6">
